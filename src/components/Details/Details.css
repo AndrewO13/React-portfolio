@@ -1,0 +1,20 @@
+.details-list {
+  list-style-type: none;
+  padding: 0;
+  color: var(--text-color);
+}
+
+.details-list li {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.details-list li:last-child {
+  border-bottom: none;
+}
+
+.details-list strong {
+  color: var(--header-color);
+  margin-right: 0.5rem;
+} 

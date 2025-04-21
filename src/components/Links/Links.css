@@ -1,0 +1,19 @@
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text-color);
+}
+
+.links a {
+  color: var(--header-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  transform: translateX(5px);
+} 

@@ -1,3 +1,80 @@
+# Andrew Ogwang Portfolio - React Version
+
+This is a modern React version of Andrew Ogwang's portfolio website.
+
+## Features
+
+- Interactive navigation with hover effects
+- Responsive design
+- Dynamic content sections
+- Modern UI with gradient background
+- Mobile-friendly layout
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+
+### Installation
+
+1. Clone the repository or download the files
+2. Navigate to the project directory:
+   ```
+   cd portfolio-react
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+
+### Running the Application
+
+1. Start the development server:
+   ```
+   npm start
+   ```
+2. Open your browser and navigate to `http://localhost:3000`
+
+### Building for Production
+
+To create a production build:
+
+```
+npm run build
+```
+
+This will create an optimized build in the `build` folder that you can deploy to any static hosting service.
+
+## Project Structure
+
+```
+portfolio-react/
+├── public/
+│   ├── images/
+│   │   └── Young M.E.jpg
+│   └── videos/
+│       └── Mad hesi.mp4
+├── src/
+│   ├── components/
+│   │   ├── Navigation/
+│   │   ├── Profile/
+│   │   ├── Details/
+│   │   ├── Results/
+│   │   ├── Hobby/
+│   │   ├── Links/
+│   │   └── Career/
+│   ├── App.js
+│   └── App.css
+```
+
+## Customization
+
+- To update content, modify the respective component files
+- To change styling, edit the CSS files in each component directory
+- To add new sections, create new components and update the Navigation component
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
