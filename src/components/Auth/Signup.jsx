@@ -19,8 +19,10 @@ const Signup = () => {
     
     // Add your signup logic here
     console.log('Signup attempted');
-    // Redirect to portfolio page
-    navigate('/portfolio');
+    
+    // For demo purposes, we'll just redirect to login
+    // In a real app, you would create the account and then log in
+    navigate('/login');
   };
 
   const togglePassword = (field) => {

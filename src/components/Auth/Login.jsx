@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -10,6 +10,12 @@ const Login = () => {
     e.preventDefault();
     // Add your login logic here
     console.log('Login attempted');
+    
+    // Call the onLogin function to update authentication state
+    if (onLogin) {
+      onLogin();
+    }
+    
     // Redirect to portfolio page
     navigate('/portfolio');
   };

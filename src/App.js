@@ -18,6 +18,7 @@ function App() {
     const savedTheme = localStorage.getItem('theme');
     return savedTheme === 'dark';
   });
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
@@ -47,23 +48,35 @@ function App() {
     }
   };
 
-  const PortfolioContent = () => (
-    <div className="app">
-      <ThemeToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
-      <div className="container">
-        <Navigation 
-          activeSection={activeSection} 
-          onSectionChange={setActiveSection} 
-        />
-        <div className="content-area">
-          <div className="header-section">
-            <h1>Andrew Ogwang</h1>
-            <p>Computer Science Student at Uganda Christian University</p>
+  const PortfolioContent = () => {
+    // If not authenticated, redirect to login
+    if (!isAuthenticated) {
+      return <Navigate to="/login" replace />;
+    }
+
+    return (
+      <div className="app">
+        <ThemeToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
+        <div className="container">
+          <Navigation 
+            activeSection={activeSection} 
+            onSectionChange={setActiveSection} 
+          />
+          <div className="content-area">
+            <div className="header-section">
+              <h1>Andrew Ogwang</h1>
+              <p>Computer Science Student at Uganda Christian University</p>
+            </div>
+            {renderSection()}
           </div>
-          {renderSection()}
         </div>
       </div>
-    </div>
+    );
+  };
+
+  // Pass authentication state and setter to Login component
+  const LoginWithAuth = () => (
+    <Login onLogin={() => setIsAuthenticated(true)} />
   );
 
   return (
@@ -71,7 +84,7 @@ function App() {
       <Routes>
         <Route path="/portfolio" element={<PortfolioContent />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginWithAuth />} />
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
