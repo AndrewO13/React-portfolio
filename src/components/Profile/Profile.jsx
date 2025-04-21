@@ -5,7 +5,7 @@ const Profile = () => {
   return (
     <div className="content-section">
       <div className="profile-section">
-        <img src="Young M.E.jpg" alt="Andrew Profile Picture" />
+        <img src={`${process.env.PUBLIC_URL}/images/Young M.E.jpg`} alt="Andrew" />
       </div>
     </div>
   );
