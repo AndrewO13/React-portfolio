@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className="content-section">
       <div className="contact-section">
-        <img src={`${process.env.PUBLIC_URL}/images/contact.jpg`} alt="Contact" />
+        <img src={process.env.PUBLIC_URL + '/images/contact.jpg'} alt="Contact" />
         <div className="contact-info">
           <h2>Contact Me</h2>
           <p>Email: example@email.com</p>
