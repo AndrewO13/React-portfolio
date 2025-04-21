@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
 import Profile from './components/Profile/Profile';
 import Details from './components/Details/Details';
@@ -7,6 +8,8 @@ import Hobby from './components/Hobby/Hobby';
 import Links from './components/Links/Links';
 import Career from './components/Career/Career';
 import ThemeToggle from './components/ThemeToggle/ThemeToggle';
+import Login from './components/Auth/Login';
+import Signup from './components/Auth/Signup';
 import './App.css';
 
 function App() {
@@ -44,7 +47,7 @@ function App() {
     }
   };
 
-  return (
+  const PortfolioContent = () => (
     <div className="app">
       <ThemeToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
       <div className="container">
@@ -61,6 +64,17 @@ function App() {
         </div>
       </div>
     </div>
+  );
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<PortfolioContent />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Router>
   );
 }
 
