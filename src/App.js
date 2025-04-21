@@ -69,10 +69,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/portfolio" element={<PortfolioContent />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/" element={<PortfolioContent />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>
   );

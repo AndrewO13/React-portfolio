@@ -20,7 +20,7 @@ const Signup = () => {
     // Add your signup logic here
     console.log('Signup attempted');
     // Redirect to portfolio page
-    navigate('/');
+    navigate('/portfolio');
   };
 
   const togglePassword = (field) => {

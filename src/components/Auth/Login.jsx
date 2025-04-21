@@ -11,7 +11,7 @@ const Login = () => {
     // Add your login logic here
     console.log('Login attempted');
     // Redirect to portfolio page
-    navigate('/');
+    navigate('/portfolio');
   };
 
   const togglePassword = () => {
