@@ -17,7 +17,7 @@ const Signup = () => {
       return;
     }
     
-    // Add your signup logic here
+    //signup logic
     console.log('Signup attempted');
     
     // For demo purposes, we'll just redirect to login
